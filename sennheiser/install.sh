@@ -1,7 +1,7 @@
 #/bin/bash
 
 rm -rf linux-*/
-apt source linux
+apt source -t bullseye linux
 cd linux-*/
 cp -v /lib/modules/`uname -r`/build/.config .
 cp -v /lib/modules/`uname -r`/build/Module.symvers .
@@ -10,7 +10,7 @@ patch -p0 < ../kernelpatch
 make clean
 make modules_prepare
 make M=sound/usb
-killall pulseaudio
+sudo killall pulseaudio
 sudo rmmod snd-usb-audio
 sudo cp -v /lib/modules/`uname -r`/kernel/sound/usb/snd-usb-audio.ko /lib/modules/`uname -r`/kernel/sound/usb/snd-usb-audio.ko.old
 sudo cp -v ./sound/usb/snd-usb-audio.ko /lib/modules/`uname -r`/kernel/sound/usb/snd-usb-audio.ko

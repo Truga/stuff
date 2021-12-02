@@ -1,0 +1,6 @@
+# GSA-70 dongle with updated firmware
+ATTRS{idVendor}=="1395", ATTRS{idProduct}=="0300", ENV{PULSE_PROFILE_SET}="usb-gaming-headset.conf"
+# GSA-70 dongle with older firmware
+ATTRS{idVendor}=="1395", ATTRS{idProduct}=="0089", ENV{PULSE_PROFILE_SET}="usb-gaming-headset.conf"
+# GSP-670 headset
+ATTRS{idVendor}=="1395", ATTRS{idProduct}=="008a", ENV{PULSE_PROFILE_SET}="usb-gaming-headset.conf"
