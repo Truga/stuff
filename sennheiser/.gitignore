@@ -1,0 +1,8 @@
+# ignore everything
+*
+
+# except my files
+!.gitignore
+!install.sh
+!kernelpatch
+!etc/udev/rules.d/91-pulseaudio-sennheiser-gsp670.rules
