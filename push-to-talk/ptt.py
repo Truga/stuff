@@ -15,6 +15,6 @@ for event in dev.read_loop():
     if event.code == ecodes.ecodes['KEY_'+PTTKey]:
         match event.value:
             case 0:
-                subprocess.run(['/usr/bin/pacmd', 'set-source-mute', PTTMic, '1'])
+                subprocess.run(['/usr/bin/pactl', 'set-source-mute', PTTMic, '1'])
             case 1:
-                subprocess.run(['/usr/bin/pacmd', 'set-source-mute', PTTMic, '0'])
+                subprocess.run(['/usr/bin/pactl', 'set-source-mute', PTTMic, '0'])
