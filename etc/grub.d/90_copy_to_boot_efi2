@@ -1,0 +1,8 @@
+#!/bin/sh
+set -e
+
+if mount | grep -q '/boot/efi2' ; then
+	echo "Copying EFI stuff to 2nd partition"
+        rsync -v -t --recursive --delete /boot/efi/ /boot/efi2/
+fi
+exit 0
